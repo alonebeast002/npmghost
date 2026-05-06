@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "npm-ghost"
+version = "2.2.0"
+description = "JS/Map NPM package recon tool — dependency confusion hunter"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "alone_beast_02" }
+]
+requires-python = ">=3.8"
+dependencies = [
+    "chardet>=5.0.0",
+    "brotli>=1.0.9",
+]
+keywords = ["npm", "recon", "dependency-confusion", "bugbounty", "security"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Security",
+]
+
+[project.scripts]
+npm-ghost = "npm_ghost.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
