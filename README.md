@@ -55,7 +55,6 @@ python setup.py install
 **Run**
 ```
 npmghost
-
 ```
 ---
 
