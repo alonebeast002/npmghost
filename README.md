@@ -47,12 +47,16 @@ pip install npm-ghost
 Or from source:
 
 ```bash
-git clone https://github.com/alonebeast002/NPM-Ghost
-cd NPM-Ghost
+https://github.com/alonebeast002/npmghost.git
+cd npmghost
 pip install -r requirements.txt
-python blast.py
+python setup.py install
 ```
+**Run**
+```
+npmghost
 
+```
 ---
 
 ## Requirements
