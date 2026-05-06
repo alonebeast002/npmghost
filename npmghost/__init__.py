@@ -1,4 +1,4 @@
-__version__ = "1.2.4"
+__version__ = "0.0.1"
 __author__  = "ALONE BEAST"
 
 from .main import main
