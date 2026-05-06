@@ -1,6 +1,10 @@
 # NPM Ghost
 
-A fast, dependency confusion recon tool that crawls JavaScript and source map files to extract NPM package names and checks if they exist on the public registry.
+A fast dependency confusion recon tool that crawls JavaScript and source map files to extract NPM package names and checks if they exist on the public registry.
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=flat-square&logo=python)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+![PyPI](https://img.shields.io/badge/PyPI-npmghost-orange?style=flat-square&logo=pypi)
 
 ---
 
@@ -11,7 +15,6 @@ A fast, dependency confusion recon tool that crawls JavaScript and source map fi
 - Checks each package against the NPM registry
 - Flags packages that do not exist — potential dependency confusion targets
 - Handles gzip, deflate, and brotli compressed responses
-- Follows chunked transfer encoding
 - Saves results to structured JSON and plain text output files
 
 ---
@@ -27,35 +30,24 @@ A fast, dependency confusion recon tool that crawls JavaScript and source map fi
 
 ---
 
-## Output Files
-
-| File | Content |
-|------|---------|
-| `all_packages.txt` | All extracted package names, one per line |
-| `all_urls.txt` | All discovered `.js` and `.map` URLs, one per line |
-| `all_urls.json` | Same URLs in structured JSON format |
-| `npm_ghost_results.json` | Full scan results with package name, version, status, and source URL |
-
----
-
 ## Installation
 
 ```bash
-pip install npm-ghost
+pip install npmghost
 ```
 
-Or from source:
+From source:
 
 ```bash
-https://github.com/alonebeast002/npmghost.git
+git clone https://github.com/alonebeast002/npmghost.git
 cd npmghost
-pip install -r requirements.txt
-python setup.py install
+pip install .
 ```
-**Run**
-```
+
+```bash
 npmghost
 ```
+
 ---
 
 ## Requirements
@@ -63,18 +55,31 @@ npmghost
 - Python 3.8+
 - `chardet`
 - `brotli` (optional, enables brotli decompression)
-- `subfinder` (optional, required for wildcard mode — installed automatically if Go is available)
+- `subfinder` (optional, required for wildcard mode)
 
 ---
 
-## Use Case
+## Output Files
 
-Dependency confusion is a supply chain attack where a public package with the same name as a private internal package gets installed instead. This tool helps security researchers identify internal package names exposed in client-side JavaScript that do not exist on the public NPM registry.
+| File | Content |
+|------|---------|
+| `all_packages.txt` | All extracted package names |
+| `all_urls.txt` | All discovered `.js` and `.map` URLs |
+| `all_urls.json` | Same URLs in JSON format |
+| `npm_ghost_results.json` | Full scan results with package name, version, status, and source URL |
 
-**Use only on targets you have permission to test.**
+---
+
+## Disclaimer
+
+For authorized security testing and bug bounty research only. Use on targets you have permission to test.
 
 ---
 
 ## Author
 
-alonebeast002
+alonebeast002 — [GitHub](https://github.com/alonebeast002)
+
+## License
+
+[MIT](LICENSE)
